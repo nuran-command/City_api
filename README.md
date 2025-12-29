@@ -72,3 +72,116 @@ Open your browser:
 ```
 http://localhost:3000
 ```
+
+API Documentation (Backend Endpoints)
+
+The frontend communicates with server-side endpoints only; API keys are never exposed to the browser.
+1. Weather Endpoint
+```
+GET /api/weather?city=<CITY_NAME>
+```
+```
+
+{
+  "city": "Almaty",
+  "country": "KZ",
+  "temperature": 4.95,
+  "feels_like": 3.31,
+  "humidity": 61,
+  "pressure": 1014,
+  "wind": 2,
+  "description": "smoke",
+  "icon": "50d",
+  "lat": 43.25,
+  "lon": 76.95,
+  "rain_3h": 0
+}
+```
+2. News Endpoint
+```
+GET /api/news?city=<CITY_NAME>
+```
+```
+{
+  "city": "Almaty",
+  "articles": [
+    {
+      "title": "News Title",
+      "source": "Source Name",
+      "url": "https://example.com",
+      "publishedAt": "2025-12-27T22:00:00Z"
+    }
+  ]
+}
+```
+3. Currency Endpoint
+```
+GET /api/currency?country=<COUNTRY_CODE>
+```
+```
+{
+  "base": "USD",
+  "currency": "KZT",
+  "rate": 503.7243
+}
+```
+#Postman Testing
+
+##Weather API
+
+Request: GET http://localhost:3000/api/weather?city=Almaty
+<img src="images/Снимок экрана 2025-12-29 в 15.35.45.png" alt="Dashboard" width="400">
+
+News API
+
+Request: GET http://localhost:3000/api/news?city=Almaty
+<img src="images/Снимок экрана 2025-12-29 в 15.36.12.png" alt="Dashboard" width="400">
+
+Currency API
+
+Request: GET http://localhost:3000/api/currency?country=KZ
+<img src="images/Снимок экрана 2025-12-29 в 15.36.27.png" alt="Dashboard" width="400">	
+
+Error Handling
+
+Request: GET http://localhost:3000/api/weather?city=invalidcity
+<img src="images/Снимок экрана 2025-12-29 в 15.37.04.png" alt="Dashboard" width="400">	
+#Frontend Screenshots:
+<img src="images/Снимок экрана 2025-12-29 в 15.39.33.png" alt="Dashboard" width="400">
+<img src="images/Снимок экрана 2025-12-29 в 15.39.40.png" alt="Dashboard" width="400">
+
+```
+weather-api-app/
+├─ .env                  # Environment variables
+├─ server.js             # Backend server
+├─ package.json          # Dependencies
+├─ routes/               # API routes
+│   ├─ weather.js
+│   ├─ news.js
+│   └─ currency.js
+├─ services/             # External API services
+│   ├─ weatherService.js
+│   ├─ newsService.js
+│   └─ currencyService.js
+└─ public/               # Frontend
+    ├─ index.html
+    ├─ css/style.css
+    └─ js/main.js
+```
+
+Key Design Decisions
+
+Server-Side API Proxying
+	•	All API calls go through backend routes to hide API keys.
+	•	Prevents keys from being exposed in the frontend network requests.
+
+Leaflet.js Map
+	•	Free and open-source mapping library.
+	•	No API key required, easy to implement with interactive markers.
+
+Currency Auto-Detection
+	•	Uses country code from weather API to select the correct currency automatically.
+	•	Improves UX by removing the need for manual currency selection.
+
+Rain Volume Standardization
+	•	Ensures rain_3h is always present (default 0) even if OpenWeather API omits it.
