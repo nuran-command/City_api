@@ -131,30 +131,31 @@ GET /api/currency?country=<COUNTRY_CODE>
 
 Request: GET http://localhost:3000/api/weather?city=Almaty
 <br>
-<img src="images/Снимок экрана 2025-12-29 в 15.35.45.png" alt="Dashboard" width="400">
+<img src="images/Снимок экрана 2025-12-29 в 15.35.45.png" alt="Dashboard" width="800">
 
 News API
 
 Request: GET http://localhost:3000/api/news?city=Almaty
 <br>
-<img src="images/Снимок экрана 2025-12-29 в 15.36.12.png" alt="Dashboard" width="400">
+<img src="images/Снимок экрана 2025-12-29 в 15.36.12.png" alt="Dashboard" width="800">
 
 Currency API
 
 Request: GET http://localhost:3000/api/currency?country=KZ
 <br>
-<img src="images/Снимок экрана 2025-12-29 в 15.36.27.png" alt="Dashboard" width="400">	
+<img src="images/Снимок экрана 2025-12-29 в 15.36.27.png" alt="Dashboard" width="800">	
 
 Error Handling
 
 Request: GET http://localhost:3000/api/weather?city=invalidcity
 <br>
-<img src="images/Снимок экрана 2025-12-29 в 15.37.04.png" alt="Dashboard" width="400">	
+<img src="images/Снимок экрана 2025-12-29 в 15.37.04.png" alt="Dashboard" width="800">
+<br>	
 #Frontend Screenshots:
 <br>
-<img src="images/Снимок экрана 2025-12-29 в 15.39.33.png" alt="Dashboard" width="400">
+<img src="images/Снимок экрана 2025-12-29 в 15.39.33.png" alt="Dashboard" width="800">
 <br>
-<img src="images/Снимок экрана 2025-12-29 в 15.39.40.png" alt="Dashboard" width="400">
+<img src="images/Снимок экрана 2025-12-29 в 15.39.40.png" alt="Dashboard" width="800">
 
 ```
 weather-api-app/
